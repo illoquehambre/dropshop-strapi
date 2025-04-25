@@ -24,7 +24,7 @@ export default factories.createCoreController('api::store.store', ({ strapi }) =
         const entity = await strapi.db.query('api::store.store').findOne({
 
             where: { title: id },
-            populate: ['owner'],
+            populate: ['owner', 'logo'],
         });
         console.log('entity', entity);
         if (!entity) {

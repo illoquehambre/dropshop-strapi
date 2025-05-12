@@ -395,7 +395,17 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+    printful_api_key: Schema.Attribute.String &
+      Schema.Attribute.Private &
+      Schema.Attribute.DefaultTo<'NFlNTWaomCKIlWB8Glw4HEIrqeJc3Np5eYejvH79'>;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 35;
+        minLength: 4;
+      }>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

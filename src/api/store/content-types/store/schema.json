@@ -30,6 +30,18 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "store"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 35
+    },
+    "printful_api_key": {
+      "type": "string",
+      "private": true,
+      "default": "NFlNTWaomCKIlWB8Glw4HEIrqeJc3Np5eYejvH79"
     }
   }
 }

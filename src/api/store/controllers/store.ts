@@ -23,8 +23,8 @@ export default factories.createCoreController('api::store.store', ({ strapi }) =
         console.log('slug', id);
         const entity = await strapi.db.query('api::store.store').findOne({
 
-            where: { title: id },
-            populate: ['owner', 'logo'],
+            where: { slug: id },
+            populate: ['owner', 'logo', 'title'],
         });
         console.log('entity', entity);
         if (!entity) {
@@ -33,6 +33,7 @@ export default factories.createCoreController('api::store.store', ({ strapi }) =
 
         // ⚠️ Devuelve solo los campos que quieres exponer públicamente
         return {
+            slug: entity.slug,
             title: entity.title,
             logo: entity.logo,
             owner: {

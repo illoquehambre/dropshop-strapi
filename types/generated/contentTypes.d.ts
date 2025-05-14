@@ -384,6 +384,7 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    expiresAt: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::store.store'> &
       Schema.Attribute.Private;
@@ -399,6 +400,7 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private &
       Schema.Attribute.DefaultTo<'NFlNTWaomCKIlWB8Glw4HEIrqeJc3Np5eYejvH79'>;
     publishedAt: Schema.Attribute.DateTime;
+    refreshToken: Schema.Attribute.String & Schema.Attribute.Private;
     slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -407,6 +409,7 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
         minLength: 4;
       }>;
     title: Schema.Attribute.String;
+    token: Schema.Attribute.String & Schema.Attribute.Private;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

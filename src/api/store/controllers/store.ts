@@ -22,9 +22,8 @@ export default factories.createCoreController('api::store.store', ({ strapi }) =
         const { id } = ctx.params;
         console.log('slug', id);
         const entity = await strapi.db.query('api::store.store').findOne({
-
             where: { slug: id },
-            populate: ['owner', 'logo', 'title'],
+            populate: ['owner', 'logo', 'title', ],
         });
         console.log('entity', entity);
         if (!entity) {
@@ -55,13 +54,13 @@ export default factories.createCoreController('api::store.store', ({ strapi }) =
         });
 
         return entry;
-    }
+    },
 
     // PUT /stores/:id
-    /*async update(ctx: Context) {
+    async update(ctx: Context) {
       ctx.request.body.data = {
         ...(ctx.request.body.data ?? {}),
-        tenantId: ctx.state.tenantId,
+        slug: ctx.state.slug,
       };
       return super.update(ctx);
     },
@@ -69,5 +68,5 @@ export default factories.createCoreController('api::store.store', ({ strapi }) =
     // DELETE /stores/:id
     async delete(ctx: Context) {
       return super.delete(ctx);
-    },*/
+    },
 }));

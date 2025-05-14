@@ -9,5 +9,14 @@ export default {
           middlewares: [],
         },
       },
+       {
+        method: 'GET',
+        path: '/printful-products/:slug/details/:id',
+        handler: 'printful-product.getById',
+        config: {
+          policies: [],
+          middlewares: [],
+        },
+      },
     ],
   };

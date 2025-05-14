@@ -42,6 +42,17 @@
       "type": "string",
       "private": true,
       "default": "NFlNTWaomCKIlWB8Glw4HEIrqeJc3Np5eYejvH79"
+    },
+    "expiresAt": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string",
+      "private": true
+    },
+    "refreshToken": {
+      "type": "string",
+      "private": true
     }
   }
 }
